@@ -18,7 +18,6 @@ import {
 } from "@react-three/drei";
 import "./style.css";
 import { Boxes } from "./Boxes";
-import { Car } from "./Car";
 import { Ground } from "./Ground";
 import { FloatingGrid } from "./FloatingGrid";
 import { Rings } from "./Rings";
