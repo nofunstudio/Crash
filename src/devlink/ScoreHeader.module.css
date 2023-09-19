@@ -1,0 +1,30 @@
+.topscoresheader {
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  right: 0%;
+  bottom: auto;
+
+  display: inline-block;
+  height: 60px;
+  max-width: 840px;
+  margin-top: 25px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 12px 7px;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 991px) {
+  .topscoresheader {
+    max-width: 290px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .topscoresheader {
+    display: inline-block;
+    max-width: 250px;
+  }
+}

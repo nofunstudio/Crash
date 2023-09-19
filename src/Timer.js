@@ -38,7 +38,8 @@ export function Timer({ isTimerRunning }) {
 		color: "white",
 		fontSize: "62px",
 		zIndex: 2,
-		padding: "30px",
+		marginTop: "30px",
+		padding: "90px",
 		backgroundColor: "rgba(255, 255, 255, 0.0)", // Semi-transparent white
 		fontWeight: "bold",
 		fontFamily: "Sans-Serif",

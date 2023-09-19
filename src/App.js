@@ -25,6 +25,7 @@ import { Model } from "./Robot";
 import { Mech } from "./Mech";
 import { Timer } from "./Timer";
 import { Player } from "./Player";
+import { Interface } from "./ui";
 
 function CarShow({ setIsTimerRunning }) {
 	return (
@@ -149,6 +150,8 @@ function App() {
 			<div>
 				<Timer isTimerRunning={isTimerRunning} />
 			</div>
+			<Interface />
+
 			<Canvas shadows>
 				<CarShow setIsTimerRunning={setIsTimerRunning} />
 			</Canvas>

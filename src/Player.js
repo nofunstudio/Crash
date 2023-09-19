@@ -8,7 +8,7 @@ export function Player({ setIsTimerRunning, ...props }) {
 	const [isCatchPlaying, setIsCatchPlaying] = useState(false);
 
 	const animationSequence = [
-		{ name: "Running", speed: 1, timeout: 1000 },
+		{ name: "Running", speed: 1, timeout: 10000 },
 		{ name: "Catch", speed: 1, timeout: 3000 },
 		{ name: "Running", speed: 1, timeout: 100000 },
 		{ name: "Catch", speed: 1, timeout: 3000 },

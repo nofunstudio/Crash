@@ -1,0 +1,67 @@
+.placebetwrapper {
+  display: inline-block;
+  width: 20%;
+  height: 80px;
+  max-width: 250px;
+  min-width: 50%;
+  margin-right: 0px;
+  margin-left: 0px;
+  clear: both;
+  flex: 1;
+}
+
+@media screen and (max-width: 479px) {
+  .placebetwrapper {
+    height: 60px;
+    max-width: 100%;
+    min-width: 150px;
+    order: 1;
+  }
+}
+
+.placebetbuttoncenter {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  margin-right: 0px;
+  margin-left: 0px;
+  padding: 11px;
+  align-items: center;
+  align-content: space-between;
+
+  border-radius: 15px;
+
+  background-color: hsla(125.06024096385543, 90.22%, 36.08%, 1.00);
+
+  transition: all 200ms ease;
+
+  color: hsla(0, 0.00%, 100.00%, 1.00);
+
+  cursor: pointer;
+}
+
+.placebetbuttoncenter:hover {
+  border-style: solid;
+  border-width: 2px;
+  border-color: hsla(0, 0.00%, 100.00%, 1.00);
+  background-color: hsla(121.88235294117646, 100.00%, 50.00%, 0.50);
+  color: hsla(0, 0.00%, 100.00%, 1.00);
+}
+
+.placebetbuttontext {
+  width: 100%;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 200%;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+@media screen and (max-width: 479px) {
+  .placebetbuttontext {
+    font-size: 20px;
+  }
+}
+
+.text-span {
+  padding-left: 10px;
+}
