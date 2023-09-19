@@ -24,6 +24,8 @@ import { Rings } from "./Rings";
 import { Model } from "./Robot";
 import { Mech } from "./Mech";
 import { Timer } from "./Timer";
+import { Player } from "./Player";
+
 function CarShow({ setIsTimerRunning }) {
 	return (
 		<>
@@ -63,9 +65,11 @@ function CarShow({ setIsTimerRunning }) {
 			<Ground />
 			<FloatingGrid />
 			{/* <Boxes /> */}
+
 			<Rings />
 			<Suspense fallback={null}>
-				<Mech setIsTimerRunning={setIsTimerRunning} />
+				{/* <Mech setIsTimerRunning={setIsTimerRunning} /> */}
+				<Player setIsTimerRunning={setIsTimerRunning} />
 
 				{/* <Model
 					url="./doggo.glb"
