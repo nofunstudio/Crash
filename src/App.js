@@ -13,21 +13,27 @@ import {
 	Environment,
 	OrbitControls,
 	PerspectiveCamera,
+	useTexture,
 	Clone,
 	SpriteAnimator,
 } from "@react-three/drei";
 import "./style.css";
 import { Boxes } from "./Boxes";
 import { Ground } from "./Ground";
+import { Grass } from "./Grass";
 import { FloatingGrid } from "./FloatingGrid";
 import { Rings } from "./Rings";
+import { Lines } from "./Lines";
 import { Model } from "./Robot";
 import { Mech } from "./Mech";
-import { Timer } from "./Timer";
 import { Player } from "./Player";
+import { Timer } from "./Timer";
 import { Interface } from "./ui";
-
+import * as THREE from "three";
 function CarShow({ setIsTimerRunning }) {
+	const [texture1] = useTexture([
+		process.env.PUBLIC_URL + "textures/blend23.jpg",
+	]);
 	return (
 		<>
 			<OrbitControls target={[0, 0.35, 0]} maxPolarAngle={1.45} />
@@ -36,13 +42,20 @@ function CarShow({ setIsTimerRunning }) {
 
 			<color args={[0, 0, 0]} attach="background" />
 
-			<CubeCamera resolution={256} frames={Infinity}>
+			{/* <CubeCamera resolution={256} frames={Infinity}>
 				{(texture) => (
 					<>
 						<Environment map={texture} />
 					</>
 				)}
-			</CubeCamera>
+			</CubeCamera> */}
+
+			<Environment resolution={2048} background={true}>
+				<mesh scale={20} rotation={[0, 0.54, 0]} position={[0, 0, -2]}>
+					<sphereGeometry args={[1, 10, 10]} />
+					<meshBasicMaterial map={texture1} side={THREE.BackSide} />
+				</mesh>
+			</Environment>
 
 			<spotLight
 				color={[1, 0.25, 0.7]}
@@ -62,12 +75,13 @@ function CarShow({ setIsTimerRunning }) {
 				castShadow
 				shadow-bias={-0.0001}
 			/>
+			<Grass />
 
-			<Ground />
 			<FloatingGrid />
 			{/* <Boxes /> */}
 
-			<Rings />
+			{/* <Rings /> */}
+			<Lines />
 			<Suspense fallback={null}>
 				{/* <Mech setIsTimerRunning={setIsTimerRunning} /> */}
 				<Player setIsTimerRunning={setIsTimerRunning} />

@@ -17,6 +17,7 @@ canvas {
 	flex-direction: column;
 	justify-content: flex-end;
 	z-index: 10;
+	/* pointer-events: none; */
 }
 
 .autocashtext {
