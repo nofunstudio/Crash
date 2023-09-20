@@ -2,6 +2,19 @@ import React, { useState, useEffect } from "react";
 
 export function Timer({ isTimerRunning }) {
 	const [milliseconds, setMilliseconds] = useState(1000);
+	useEffect(() => {
+		let resetTimeout;
+
+		// Check if the timer has stopped
+		if (!isTimerRunning) {
+			resetTimeout = setTimeout(() => {
+				setMilliseconds(1000); // Reset the timer after 2 seconds
+			}, 2000);
+		}
+
+		// Cleanup: Clear the timeout when component unmounts or re-renders
+		return () => clearTimeout(resetTimeout);
+	}, [isTimerRunning]);
 
 	useEffect(() => {
 		let interval;
@@ -45,5 +58,10 @@ export function Timer({ isTimerRunning }) {
 		fontFamily: "Sans-Serif",
 	};
 
-	return <div style={timerStyle}>X {seconds}</div>;
+	return (
+		<div className="timercontainer">
+			<div className="timertext">{"X" + seconds}</div>
+			<div className="timersubtitle">{"CURRENT PAYOUT"}</div>
+		</div>
+	);
 }

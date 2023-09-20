@@ -3,11 +3,10 @@ import { CashOutToken } from "./CashOutToken";
 import { PlaceBetToken } from "./PlaceBetToken";
 import { AutoCashOutToken } from "./AutoCashOutToken";
 import { WagerToken } from "./WagerToken";
-import { ScoreToken } from "./ScoreToken";
 
 import "./devlink/global.css";
 
-export function Interface() {
+export function Footer() {
 	const [wagerAmount, setWagerAmount] = useState(51.0); // Default value
 	const [cashOutTokens, setCashOutTokens] = useState([]);
 
@@ -20,18 +19,7 @@ export function Interface() {
 	};
 
 	return (
-		<div className="interface">
-			<div className="topscoresheader">
-				<ScoreToken score={1.5} />
-				<ScoreToken score={2.5} />
-				<ScoreToken score={1.1} />
-				<ScoreToken score={1.5} />
-				<ScoreToken score={2.5} />
-				<ScoreToken score={1.1} />
-				<ScoreToken score={2.5} />
-				<ScoreToken score={2.5} />
-				<ScoreToken score={2.5} />
-			</div>
+		<div className="footer">
 			<div className="cashoutrowflex">
 				{cashOutTokens.map((profit, index) => (
 					<CashOutToken profit={profit} key={index} />

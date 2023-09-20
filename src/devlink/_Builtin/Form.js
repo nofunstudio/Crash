@@ -68,8 +68,7 @@ export function FormTextInput({ className = "", ...props }) {
   });
 }
 export function FormTextarea({ className = "", ...props }) {
-  return React.createElement("input", {
-    type: "textarea",
+  return React.createElement("textarea", {
     className: className + " w-input",
     ...props,
   });

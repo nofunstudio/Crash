@@ -12,7 +12,7 @@ export function ScoreToken({ score = 1.0 }) {
 	}
 
 	const scoreFrameStyle = {
-		border: `1px solid ${borderColor}`,
+		border: `2px solid ${borderColor}`,
 	};
 
 	return (

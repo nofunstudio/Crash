@@ -1,3 +1,13 @@
+/* Fonts */
+
+@font-face {
+  font-family: 'Bebasneue';
+  src: url('https://uploads-ssl.webflow.com/650860e36a89f83f850ea0b9/650b5a1841e33b9aefbf5d2e_BebasNeue-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 /**
  * 1. Set default font family to sans-serif.
@@ -2188,7 +2198,7 @@ textarea.w-select {
   right: 0%;
   bottom: 0%;
 
-  width: 60vw;
+  width: 100vw;
   height: 100vh;
   margin-top: 0px;
   margin-right: auto;
@@ -2215,11 +2225,19 @@ textarea.w-select {
 @media screen and (max-width: 479px) {
   .iframe {
     width: 100vw;
+    padding-right: 0px;
+    padding-left: 0px;
   }
 }
 
 .gameframe {
-  display: flex;
+  position: relative;
+  left: 0%;
+  top: auto;
+  right: 0%;
+  bottom: 0%;
+
+  display: block;
   overflow: hidden;
   width: 100%;
   height: 100%;
@@ -2239,6 +2257,15 @@ textarea.w-select {
   top: auto;
   right: 0%;
   bottom: 0%;
+}
+
+.footer {
+  position: absolute;
+  left: 0%;
+  top: auto;
+  right: 0%;
+  bottom: 0%;
+  z-index: 1;
 }
 
 .betrow {
@@ -2504,51 +2531,54 @@ textarea.w-select {
 }
 
 .topscoresheader {
-  position: absolute;
-  left: 0%;
-  top: 0%;
-  right: 0%;
-  bottom: auto;
+  position: relative;
+  z-index: 1;
 
   display: inline-block;
+  width: 100%;
   height: 60px;
-  max-width: 840px;
-  margin-top: 25px;
+  margin-top: 0px;
   margin-right: auto;
   margin-left: auto;
   padding: 12px 7px;
   justify-content: center;
   align-items: center;
+  flex: 0 auto;
 }
 
 @media screen and (max-width: 991px) {
   .topscoresheader {
-    max-width: 290px;
+    flex: 0 auto;
   }
 }
 
 @media screen and (max-width: 767px) {
   .topscoresheader {
     display: inline-block;
-    max-width: 250px;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .topscoresheader {
+    padding-right: 0px;
+    padding-left: 0px;
+    flex: 0 auto;
   }
 }
 
 .scoreframe {
   display: flex;
-  height: 100%;
-  margin-right: 4px;
-  margin-bottom: 5px;
-  margin-left: 4px;
-  padding: 19px;
+  margin: 3px 4px 5px;
+  padding: 8px 12px;
   float: left;
   justify-content: center;
+  flex-wrap: nowrap;
   align-items: center;
 
   border-style: solid;
-  border-width: 1px;
-  border-color: hsla(125.06024096385543, 0.00%, 47.33%, 1.00);
-  border-radius: 15px;
+  border-width: 2px;
+  border-color: hsla(125.06024096385543, 0.00%, 47.33%, 0.38);
+  border-radius: 8px;
 
   background-color: hsla(0, 0.00%, 10.00%, 0.76);
 
@@ -2564,8 +2594,12 @@ textarea.w-select {
 @media screen and (max-width: 479px) {
   .scoreframe {
     display: flex;
-    min-width: 90px;
+    margin-bottom: 4px;
+    padding: 7px 9px;
     justify-content: center;
+
+    border-width: 1.5px;
+    border-radius: 6px;
   }
 }
 
@@ -2580,8 +2614,19 @@ textarea.w-select {
 .scoretext {
   font-family: 'PT Sans', sans-serif;
   color: hsla(122, 0.00%, 100.00%, 1.00);
-  font-size: 16px;
+  font-size: 14px;
+  line-height: 18px;
   font-weight: 700;
+  letter-spacing: 0px;
+}
+
+@media screen and (max-width: 479px) {
+  .scoretext {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 10px;
+    line-height: 10px;
+    font-weight: 400;
+  }
 }
 
 .cashoutrowflex {
@@ -2807,4 +2852,112 @@ textarea.w-select {
   .autocashlabel {
     font-size: 12px;
   }
+}
+
+.scoreheadercontainer {
+  position: absolute;
+  z-index: 1;
+
+  display: flex;
+  width: 100%;
+  padding-right: 9px;
+  padding-left: 9px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+@media screen and (max-width: 991px) {
+  .scoreheadercontainer {
+    position: absolute;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .scoreheadercontainer {
+    position: absolute;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .scoreheadercontainer {
+    position: absolute;
+    align-items: center;
+  }
+}
+
+.timercontainer {
+  position: relative;
+
+  display: flex;
+  width: auto;
+  margin-top: 0px;
+  margin-right: 7px;
+  margin-left: 0px;
+  padding: 17px;
+  float: left;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  border-radius: 9px;
+
+  background-color: hsla(0, 0.00%, 0.00%, 0.75);
+
+  backdrop-filter: blur(8px);
+}
+
+@media screen and (max-width: 479px) {
+  .timercontainer {
+    padding-bottom: 12px;
+  }
+}
+
+.timertext {
+  display: inline-block;
+  padding: 0px;
+  flex-wrap: nowrap;
+  flex: 0 auto;
+
+  font-family: Bebasneue;
+  color: hsla(0, 0.00%, 100.00%, 1.00);
+  font-size: 72px;
+  line-height: 64px;
+  font-weight: 400;
+  letter-spacing: 0px;
+}
+
+@media screen and (max-width: 767px) {
+  .timertext {
+    font-size: 72px;
+    line-height: 60px;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .timertext {
+    font-size: 44px;
+    line-height: 44px;
+  }
+}
+
+.timersubtitle {
+  display: inline-block;
+  padding: 0px;
+  flex-wrap: nowrap;
+  flex: 0 auto;
+
+  font-family: Bebasneue;
+  color: hsla(0, 0.00%, 100.00%, 1.00);
+  font-size: 16px;
+  line-height: 16px;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+.div-block-2 {
+  width: 100%;
+  order: 1;
+  object-fit: fill;
 }
