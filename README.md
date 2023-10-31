@@ -1,1 +1,2 @@
-# bg-crash
+npm install
+npm start
